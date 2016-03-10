@@ -18,7 +18,7 @@
     "url": "https://github.com/hx0day/webdev-tasks-3/issues"
   },
   "homepage": "https://github.com/hx0day/webdev-tasks-3#readme",
-  "dev-dependencies": {
+  "devDependencies": {
     "chai": "^3.5.0",
     "istanbul": "^0.4.2",
     "jscs": "^2.11.0",
