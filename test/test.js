@@ -85,26 +85,36 @@ describe('Check parallel', function () {
 
 
     it('should check error', function (done) {
-        var result = [];
 
+        function test4(callback) {
+            setTimeout(function () {
+                callback(true, 3);
+            }, 0);
+        }
+
+        function test3(callback) {
+            setTimeout(function () {
+                callback(true, 3);
+            }, 0);
+        }
 
         function test2(callback) {
             setTimeout(function () {
-                callback(true, 1);
+                callback(false, 2);
             }, 0);
         }
 
         function test1(callback) {
             setTimeout(function () {
-                callback(true, 1);
+                callback(false, 1);
             }, 0);
         }
 
-        var test_function = [test1, test2];
+        var test_function = [test1, test2, test3, test4];
 
         flow.parallel(test_function, function (error, data) {
-            result.push(error);
-            assert.equal(result.length, 1);
+            assert.ok(error);
+            assert.deepEqual(data, [1, 2]);
             done();
         });
 
