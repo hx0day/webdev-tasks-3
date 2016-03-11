@@ -6,7 +6,7 @@ var flow = require('../lib/flow.js');
 
 describe('Check serial', function () {
 
-    it('should check', function (done) {
+    it('should check correct work', function (done) {
         var result = [];
 
         function callback(error, data) {
@@ -34,7 +34,7 @@ describe('Check serial', function () {
 
     });
 
-    it('should check error', function (done) {
+    it('should check work with error', function (done) {
         var result = [];
 
         function callback(error, data) {
@@ -84,7 +84,7 @@ describe('Check serial', function () {
 describe('Check parallel', function () {
 
 
-    it('should check error', function (done) {
+    it('should check work with error', function (done) {
 
         function test4(callback) {
             setTimeout(function () {
@@ -121,7 +121,7 @@ describe('Check parallel', function () {
 
     });
 
-    it('should check parallel', function (done) {
+    it('should check correct work', function (done) {
         var result = [];
 
         function callback(error, data) {
@@ -161,7 +161,7 @@ describe('Check parallel', function () {
     });
 });
 describe('Check map', function () {
-    it('should check', function (done) {
+    it('should check correct work', function (done) {
         var values = [5, 2];
 
         function callback(error, data) {
@@ -180,7 +180,7 @@ describe('Check map', function () {
         flow.map(values, test_function, callback);
     });
 
-    it('should error', function (done) {
+    it('should check work with error', function (done) {
         var values = [5, 2, 3];
 
         function callback(error, data) {
