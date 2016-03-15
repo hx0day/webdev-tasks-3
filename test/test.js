@@ -150,7 +150,7 @@ describe('Check parallel', function () {
 
     });
 
-    it('should check correct work', function (done) {
+    it('should check correct time work', function (done) {
         var result = [];
         var start = new Date().getTime();
 
